@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/benghuai.css" type="text/css"/>
+		<script>
+			window.onload=function(){
+				var animation = document.getElementById('animation');
+				var animation_item = document.getElementById('animation_item');
+				
+				var comic = document.getElementById('comic');
+				var comic_item = document.getElementById('comic_item');
+				
+				var game = document.getElementById('game');
+				var game_item = document.getElementById('game_item');
+				
+				animation.onclick=function(){
+					if(animation_item.style.display=="none"){
+						animation_item.style.display="block";
+						comic_item.style.display="none";
+						game_item.style.display="none";
+					}else{
+						animation_item.style.display="none";
+					}	
+				}
+				
+				comic.onclick=function(){
+					if(comic_item.style.display=="none"){
+						comic_item.style.display="block";
+						animation_item.style.display="none";
+						game_item.style.display="none";
+					}else{
+						comic_item.style.display="none";
+					}
+				}
+				
+				game.onclick=function(){
+					if(game_item.style.display=="none"){
+						game_item.style.display="block";
+						comic_item.style.display="none";
+						animation_item.style.display="none";
+					}else{
+						game_item.style.display="none";
+					}
+				}
+				
+				var hidden_block = document.getElementById('hidden_block');
+				var video_play = document.getElementById('video_play');
+				var black_block = document.getElementById('black_block');
+				var video = document.getElementById('video');
+				
+				video_play.onclick=function(){
+					
+					hidden_block.style.display="block";
+					video.play();
+				}
+				black_block.onclick= function(){
+					
+					hidden_block.style.display="none";
+					video.pause();
+				}
+				
+				
+			}
+		</script>	
+	</head>
+	<body>
+		<div class="hidden_block" id="hidden_block" style="display:none">
+			
+			<div class="video">
+				<video width="1000px" controls="controls" id="video">
+					<source src="video/《崩坏学园2》 3.1版本游戏pv 【崩坏海盗少女】_高清.mp4" type="video/mp4">
+				</video>
+			</div>
+			<div class="black_block" id="black_block"></div>
+			
+		</div>
+		
+		
+		<!--网页大舞台-->
+		<div class="arena">
+			
+			<!--网站logo-->
+			<div class="logo">
+					
+			</div>
+			
+			<!--网页主体内容区-->
+			<div class="content">				
+				
+				<div class="content_bg">
+	
+				</div>
+				
+				<div class="menu_bg">
+					
+				</div>
+				
+				<div class="download_ios">
+					<div class="ios"></div>
+				</div>
+				
+				<div class="download_android">
+					<div class="android"></div>
+				</div>
+					
+				
+				<div class="video_btn">
+					<div class="video_border1"></div>
+					
+					<div class="video_border2"></div>
+					
+					<div class="video_play" id="video_play"></div>
+				</div>
+				
+				<div class="nav">
+					
+					<div class="animation" id="animation">
+						<div class="animation_item" id="animation_item" style="display:none">
+							<a href="">四格手书</a>
+							<a href="">PV视频</a>
+						</div>	
+					</div>
+					<div class="comic" id="comic">
+						<div class="comic_item" id="comic_item" style="display:none">
+							<a href="">正篇漫画</a>
+							<a href="">短篇漫画</a>
+							<a href="">四格漫画</a>
+						</div>
+					</div>
+					<div class="game" id="game">
+						<div class="game_item" id="game_item" style="display:none">
+							<a href="index.html">游戏主站</a>
+							<a href="">游戏插图</a>
+						</div>
+					</div>
+					<div class="novel"></div>
+					
+				</div>
+				
+			</div>
+			
+
+			
+		</div>
+		<div class="bottom">
+			
+			<div class="bottom_position">
+				<div class="bottom_content">
+						
+					<p>健康游戏忠告：本游戏适合17岁(含)以上玩家娱乐，抵制不良游戏，拒绝盗版游戏。注意自我保护，谨防受骗上当。适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活。</p>
+					<p>用户协议： 米哈游游戏使用许可及服务协议 米哈游用户个人信息及隐私保护政策 交易纠纷处理 家长监护工程 防沉迷系统</p>
+ 					<p>沪公网安备31010402001117号 沪ICP备14042301号 沪网文[2015]0592-142号 文网游备字（2015）M-CSG 0396号</p>    
+ 					<p>2015-2018 All Rights Reserved 上海米哈游网络科技股份有限公司 版权所有 地址：上海市徐汇区宜山路1388号民润大厦12A 电话：86-021-52270738法律声明免责条款联系方式</p> 
+
+				</div>
+			</div>
+				
+				
+		</div>
+	</body>
+</html>

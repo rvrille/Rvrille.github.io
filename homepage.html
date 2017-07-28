@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/hsod2.css"/>
+		<script>
+			window.onload=function(){
+				var offset = 0;
+				var animat = false;
+				var width;
+				var Ul = document.getElementById('list');
+				var dots = document.getElementById('dot').getElementsByTagName('span');
+				var index = 1;
+				var move = 0;
+				var one_time = 10;
+//				function animation(width,next_width){
+
+//					move = (next_width - width)/one_time;
+					
+//					console.log(move);
+//					go(width,next_width,move);
+//					function go(w,next_width,move){
+//						if(width>next_width){
+//							if(w>next_width){
+//								setTimeout(function(){
+//									w += move;
+									
+//									Ul.style.left = w + 'px';
+//									go(w,next_width,move);
+//								},30);	
+//							}else{
+//								Ul.style.left = next_width + 'px';
+//								animat = false;
+//							}
+//						}
+//						if(width<next_width){
+//							if(w<next_width){
+//								setTimeout(function(){
+//									w += move;
+//									Ul.style.left = w + 'px';
+//									go(w,next_width,move);
+//								},30);	
+//							}else{
+//								Ul.style.left = next_width + 'px';
+//								animat = false;
+//							}
+//						}
+						
+//					}
+//					
+//				}
+				
+				
+				function checkIndex(index){					
+					for(var i=0; i<dots.length; i++){
+						dots[i].className="";		
+					}
+					console.log(index);
+					dots[index-1].className="on";
+					console.log(dots[index-1]);
+				}
+				
+				for(var i=0; i<dots.length; i++){
+					dots[i].onclick=function(){
+						if(animat){
+							return false;
+						}
+						width = parseInt(Ul.style.left);
+//						console.log(width);
+						var index = this.getAttribute('index');
+						console.log(index);
+						var next_width = (index-1) * -615;
+//						animation(width,next_width);
+						if(width!=next_width){
+							Ul.style.left = next_width  +'px';
+						}
+						checkIndex(index);
+						width = next_width;
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<!--网站整体结束-->
+		<div class="arena">
+					
+			<!--网站主体部分-->
+			<div class="content">
+				
+				<div class="bg_1"></div>
+				<div class="bg_2"></div>
+				<div class="bg_3"></div>
+				<div class="bg_4"></div>				
+				
+				<div class="top">
+					<div class="top_nav">
+						<a href="homepage.html">官网首页</a>
+						<a href="charge.html">游戏充值</a>
+						<a href="">游戏引导</a>
+						<a href="gl_chara.html">游戏资料</a>
+						<a href="">相关下载</a>
+					</div>
+					<div class="logo"></div>
+				</div>
+				
+				<div class="between">
+					<div class="left">
+						<div class="between_video">
+							<video controls="controls">
+								<source src="video/PV2.mp4" type="video/mp4"></source>
+							</video>
+								
+						</div>
+						
+						<div class="content_state">
+							<div id="dot" class="dot">
+                				<span index="1" class="on">公告</span>
+                				<span index="2">系统</span>
+               					<span index="3">人物</span>
+                				<span index="4">画面</span>
+                				<span index="5">音乐</span>
+                				<span index="6">原画</span>
+                				<span index="7">壁纸</span>
+								<a href="">&gt;&gt;&nbsp;更多</a>
+        					</div>
+							<ul id="list" style="left:0px;">
+   						        <li><a href="#"><img src=""></a>
+            					<li><a href="#"><img src="homepage/系统001.jpg"></a></li>
+           			 			<li><a href="#"><img src="homepage/人物003_new.jpg"></a></li>
+            					<li><a href="#"><img src="homepage/画面001.jpg"></a></li>
+            					<li><a href="#"><img src="homepage/音乐001.jpg"></a></li>
+            					<li><a href="#"><img src="homepage/yuanhua2.jpg"></a></li>
+            					<li class="wallpaper">
+            						<a href="#">
+            							<img src="homepage/wallpaper1.jpg" alt="" />
+            							<img src="homepage/wallpaper2.jpg" alt="" />
+            							<img src="homepage/wallpaper3.jpg" alt="" />
+            						</a>            						
+            					</li>
+        					</ul>
+
+						</div>
+					</div>
+					<div class="right">
+						<div class="ios_download">
+							<div class="ios_download_top">
+								<div class="ios_download_left">
+									<span>iOS下载</span>
+									<p>版本号：V3.9</p>
+									<p>适用固件：iOS 6.x及以上</p>
+									<p>专门针对iPhone和iPad优化设计</p>
+								</div>
+								
+								<div class="ios_download_right"></div>
+							</div>
+							
+							<div class="ios_download_bottom">
+								<div class="download_button">客户端下载</div>
+							</div>
+						</div>
+						
+						<div class="android_download">
+							<div class="android_download_top">
+								<div class="android_download_left">
+									<span>安卓下载</span>
+									<p>版本号：V3.9</p>
+									<p>适用固件：Android 4.1.x及以上</p>
+								</div>
+								
+								<div class="android_download_right"></div>
+							</div>
+							
+							<div class="android_download_bottom">
+								<div class="download_button">客户端下载</div>
+							</div>
+						</div>
+						
+						<div class="contain">
+							<div class="contain_left">
+								<span>联系中心</span>
+								<p>客服娘QQ：800022859 </p>
+								<p>新浪微博：  <a href="">崩坏官方微博</a></p>
+								<p>客服电话：  021-34203385</p>
+								<p>(10:00-20:00)</p>
+								<p>客服邮箱：   <a href="">kefu@mihoyo.com</a></p>
+								<p>官方微信：  benghuaixueyuan</p>
+							</div>
+							
+							<div class="contain_right">
+								<p>▲ 微信订阅号▲</p>							
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<!--网站主体部分-->
+			
+			<div class="bottom">
+				<a href="">未成年人家长监护机制</a>
+				<p>Copyright © 2015-2018 MIHOYO CO, LTD. ALL RIGHTS RESERVED.<span></span></p>
+			</div>
+			
+		</div>
+		<!--网站整体结束-->
+	</body>
+</html>

@@ -1,0 +1,304 @@
+*{
+	margin:0px;
+	padding:0px;
+	box-sizing:border-box;
+	text-decoration:none;
+	font-family:"microsoft yahei";
+}
+.arena{
+	width:100%;
+	height:1006px;
+	overflow:hidden;
+}
+.content{
+	width:1048px;
+	height:1006px;
+	position:relative;
+	margin:0 auto;
+}
+.logo{
+	width:500px;
+	height:386px;
+	background: url(../benghuaiimg/logo_benghuai.png);
+	position:absolute;
+	top:20px;
+	left:20px;
+	z-index:10;
+}
+
+.content_bg,.menu_bg{
+	position:absolute;
+	width:1920px;
+	height:1006px;
+	position:absolute;
+	left:50%;
+	margin-left:-960px;
+}
+.content_bg{
+	background: url(../benghuaiimg/background.jpg);
+}
+.menu_bg{
+	background: url(../benghuaiimg/top.png);
+}
+
+.download_ios{
+	width: 308px;
+	height: 171px;
+	background: url(../benghuaiimg/button_hint_right.png) no-repeat center center;
+	background-size: 105% 105%;
+	position:absolute;
+	top:380px;
+	left:720px;
+	animation:go 2s linear infinite;
+}
+@keyframes go{
+	50%{
+		transform: translateY(5px);
+	}
+}
+.ios{
+	width: 120px;
+	height: 45px;
+	background: url(../benghuaiimg/download_ios.png);
+	background-size:100% 100%;
+	position:absolute;
+	left:50%;
+	margin-left:-75px;
+	top:50%;
+	margin-top:-25px;
+}
+
+.download_android{
+	width: 308px;
+	height:171px;
+	background: url(../benghuaiimg/button_hint_right.png) no-repeat center center;
+	background-size: 105% 105%;
+	position:absolute;
+	top:490px;
+	left:680px;
+	animation:goF 2s linear infinite;
+}
+@keyframes goF{
+	10%{
+		transform:translateY(0px);
+	}
+	55%{
+		transform:translateY(5px);
+	}
+}
+.android{
+	width:120px;
+	height:45px;
+	background: url(../benghuaiimg/download_android.png);
+	background-size:100% 100%;
+	position:absolute;
+	left:50%;
+	margin-left:-75px;
+	top:50%;
+	margin-top:-25px;
+}
+
+
+.video_btn{
+	width:100px;
+	height:100px;
+	position:absolute;
+	z-index:3;
+	top:704px;
+	left:712px;
+}
+.video_border1{
+	width:110px;
+	height:110px;
+	position:absolute;
+	left:50%;
+	margin-left:-55px;
+	top:50%;
+	margin-top:-55px;
+	background: url(../benghuaiimg/player_button_3.png);
+	background-size:100% auto;
+	animation:rotateF 6s linear infinite;
+}
+.video_border2,.video_play{
+	width:80px;
+	height:80px;
+	position:absolute;
+	left:50%;
+	margin-left:-40px;
+	top:50%;
+	margin-top:-40px;
+}
+.video_border2{
+	background: url(../benghuaiimg/player_button_2.png);
+	background-size:100%;	
+	animation:rotate 3s linear infinite;
+}
+.video_play{
+	background: url(../benghuaiimg/player_button_1.png);
+	background-size: 100%;
+}
+@keyframes rotate{
+	from{
+		transform: rotate(0deg);
+	}
+	to{
+		transform: rotate(360deg);
+	}
+}
+@keyframes rotateF{
+	from{
+		transform: rotate(360deg);
+	}
+	to{
+		transform: rotate(0deg);
+	}
+}
+
+.nav{
+	width:100%;
+	height:170px;
+	position:absolute;
+	bottom:60px;
+}
+.animation,.comic,.game,.novel{
+	float:left;
+	width:242px;
+	height:170px;
+	position:relative;
+}
+.animation{
+	background: url(../benghuaiimg/button_1_2.png);
+}
+.animation:hover{
+	background: url(../benghuaiimg/button_1_0.png);
+}
+.comic{
+	background: url(../benghuaiimg/button_2_2.png);
+}
+.comic:hover{
+	background: url(../benghuaiimg/button_2_0.png);
+}
+.game{
+	background: url(../benghuaiimg/button_3_2.png);
+}
+.game:hover{
+	background: url(../benghuaiimg/button_3_0.png);
+}
+.novel{
+	background: url(../benghuaiimg/button_4_2.png);
+}
+.novel:hover{
+	background: url(../benghuaiimg/button_4_0.png);
+}
+
+.animation_item{
+	width: 345px;
+	height:168px;
+	background: url(../benghuaiimg/submenu.png) 0px -80px;	
+	position:absolute;
+	top:-104px;
+	left:-80px;
+}
+.animation_item a{
+	display:block;
+	line-height:80px;
+ 	color:white;
+ 	font-size:24px;
+ 	text-align:center;
+ 	text-shadow:2px 2px 0px black;
+ 	z-index:6;
+}
+.animation_item a:hover{
+	color:moccasin;
+}
+.comic_item{
+	width: 345px;
+	height:244px;
+	background: url(../benghuaiimg/submenu.png) 0px 0px;	
+	position:absolute;
+	top:-184px;
+	left:-80px;
+}
+.comic_item a{
+	display:block;
+	line-height:80px;
+ 	color:white;
+ 	font-size:24px;
+ 	text-align:center;
+ 	text-shadow:2px 2px 0px black;
+ 	z-index:6;
+}
+.comic_item a:hover{
+	color:moccasin;
+}
+.game_item{
+	width: 345px;
+	height:168px;
+	background: url(../benghuaiimg/submenu.png) 0px -80px;	
+	position:absolute;
+	top:-104px;
+	left:-80px;
+}
+.game_item a{
+	display:block;
+	line-height:80px;
+ 	color:white;
+ 	font-size:24px;
+ 	text-align:center;
+ 	text-shadow:2px 2px 0px black;
+ 	z-index:6;
+}
+.game_item a:hover{
+	color:moccasin;
+}
+
+
+.bottom{
+	width:100%;
+	height:120px;
+	background: #13072c;
+}
+.bottom_position{
+	width:1024px;
+	height:120px;
+	margin:0 auto;
+	position:relative;
+}
+.bottom_content{
+	width:1024px;
+	height:120px;
+	position:relative;
+	left:50%;
+	margin-left:-512px;
+}
+.bottom p{
+	text-align:center;
+	font-size:12px;
+	color:#ad3e7d;
+}
+
+
+.hidden_block{
+	width: 100%;
+	height: 100%;
+	position:fixed;
+	z-index:1000;
+	}
+.video{
+	position:absolute;
+	width:1000px;
+	height:563px;
+	left:50%;
+	top:50%;
+	margin-left:-500px;
+	margin-top:-282px;
+	z-index:1001;
+	background: black;
+	}
+.black_block{
+	width: 100%;
+	height: 100%;
+	background:black;
+	opacity:0.6;
+	position:absolute;
+	}

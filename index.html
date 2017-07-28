@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/index.css" type="text/css"/>
+		<script>
+			window.onload = function(){
+				var dynamic = document.getElementById('dynamic');
+				var offset = 0;
+				setInterval(function(){
+					offset = (offset - 1<-2870)? 0:offset-1;
+					dynamic.style.left = offset +'px';				
+				},30);
+				
+				var animat = false;
+				var width;
+				var Ul = document.getElementById('ul');
+				var dots = document.getElementById('dot').getElementsByTagName('span');
+				var index = 1;
+				var move = 0;
+				var one_time = 10;
+				
+				var int = setInterval(function(){next()},3000);
+				
+				function next(){
+					var width = parseInt(Ul.style.left);
+					var next_width = (width - 978<-4890)?0: width - 978;
+					index = (++index>6)?1:index;
+					checkIndex(index);
+					animation(width,next_width);
+					
+				}
+				function animation(width,next_width){
+					animat = true;
+					move = (next_width - width)/one_time;
+					
+					console.log(move);
+					go(width,next_width,move);
+					function go(w,next_width,move){
+						if(width>next_width){
+							if(w>next_width){
+								setTimeout(function(){
+									w += move;
+									
+									Ul.style.left = w + 'px';
+									go(w,next_width,move);
+								},30);	
+							}else{
+								Ul.style.left = next_width + 'px';
+								animat = false;
+							}
+						}
+						if(width<next_width){
+							if(w<next_width){
+								setTimeout(function(){
+									w += move;
+									Ul.style.left = w + 'px';
+									go(w,next_width,move);
+								},30);	
+							}else{
+								Ul.style.left = next_width + 'px';
+								animat = false;
+							}
+						}
+						
+					}
+					
+				}
+				for(var i=0; i<dots.length; i++){
+					dots[i].onclick=function(){
+						if(animat){
+							return false;
+						}
+						width = parseInt(Ul.style.left);
+						console.log(width);
+						var index = this.getAttribute('index');
+						checkIndex(index);
+						var next_width = (index-1) * -978;
+						if(width!=next_width){
+							animation(width,next_width);	
+						}
+						width = next_width;
+					}
+				}
+				function checkIndex(index){					
+					for(var i=0; i<dots.length; i++){
+						dots[i].className='';		
+					}
+					console.log(index);
+					dots[index-1].className='on';			
+				}
+		        var container = document.getElementById('container');
+		        // 鼠标移动到窗口位置时停止自动轮播
+		        container.onmouseover=function(){
+		            // console.log(123);
+		            clearInterval(int);
+		        };
+		        // 鼠村移出窗口位置后重新启动自动轮播
+		        container.onmouseout = function(){
+		            int = setInterval(function(){next()},3000);
+		        }				
+				
+				var kiana_top = document.getElementById('kiana_top');
+				var kiana_border = document.getElementById('kiana_border');
+				var mei_top = document.getElementById('mei_top');
+				var mei_border = document.getElementById('mei_border');
+				var bronya_top = document.getElementById('bronya_top');
+				var bronya_border = document.getElementById('bronya_border');
+				var himeko_top = document.getElementById('himeko_top');
+				var himeko_border = document.getElementById('himeko_border');
+				var theresa_top = document.getElementById('theresa_top');
+				var theresa_border = document.getElementById('theresa_border');
+				
+				kiana_border.style.display="block";
+				mei_top.style.display="block";
+				bronya_top.style.display="block";
+				himeko_top.style.display="block";
+				theresa_top.style.display="block";
+				
+				kiana_top.style.display="none";
+				mei_border.style.display="none";
+				bronya_border.style.display="none";
+				himeko_border.style.display="none";
+				theresa_border.style.display="none";
+				
+				kiana_top.onclick = function(){
+					kiana_top.style.diaplay = "none";
+					kiana_top.style.height = 0+"px";
+					mei_border.style.display = "none";
+					bronya_border.style.display = "none";
+					himeko_border.style.display = "none";
+					theresa_border.style.display = "none";
+					kiana_border.style.display = "block";
+					mei_top.style.display = "block";
+					bronya_top.style.display = "block";
+					himeko_top.style.display = "block";
+					theres_top.style.display = "block";
+					theresa_top.style.height = 179+"px";
+				}
+				mei_top.onclick = function(){
+					kiana_top.style.display = "block";
+					kiana_top.style.height = 179+"px";
+					mei_border.style.display = "block";
+					bronya_border.style.display = "none";
+					himeko_border.style.display = "none";
+					theresa_border.style.display = "none";
+					kiana_border.style.display = "none";
+					mei_top.style.display = "none";
+					bronya_top.style.display = "block";
+					himeko_top.style.display = "block";
+					theresa_top.style.display = "block";
+					theresa_top.style.height = 179+"px";
+				}
+				bronya_top.onclick = function(){
+					kiana_top.style.diaplay = "block";
+					kiana_top.style.height = 179+"px";
+					mei_border.style.display = "none";
+					bronya_border.style.display = "block";
+					himeko_border.style.display = "none";
+					theresa_border.style.display = "none";
+					kiana_border.style.display = "none";
+					mei_top.style.display = "block";
+					bronya_top.style.display = "none";
+					himeko_top.style.display = "block";
+					theresa_top.style.display = "block";
+					theresa_top.style.height = 179+"px";
+				}
+				himeko_top.onclick = function(){
+					kiana_top.style.diaplay = "block";
+					kiana_top.style.height = 179+"px";
+					mei_border.style.display = "none";
+					bronya_border.style.display = "none";
+					himeko_border.style.display = "block";
+					theresa_border.style.display = "none";
+					kiana_border.style.display = "none";
+					mei_top.style.display = "block";
+					bronya_top.style.display = "block";
+					himeko_top.style.display = "none";
+					theresa_top.style.display = "block";
+					theresa_top.style.height = 179+"px";
+				}
+				theresa_top.onclick = function(){
+					kiana_top.style.diaplay = "block";
+					kiana_top.style.height = 179+"px";
+					mei_border.style.display = "none";
+					bronya_border.style.display = "none";
+					himeko_border.style.display = "none";
+					theresa_border.style.display = "block";
+					kiana_border.style.display = "none";
+					mei_top.style.display = "block";
+					bronya_top.style.display = "block";
+					himeko_top.style.display = "block";
+					theresa_top.style.display = "none";
+					theresa_top.style.height = 0+"px";
+				}
+				
+				
+				var kiana_china=document.getElementById('kiana_china');
+				var audio_kiana_china=document.getElementById('audio_kiana_china');			
+				audio_kiana_china.onclick=function(){
+					kiana_china.play();
+				}
+				
+				var kiana_japan = document.getElementById('kiana_japan');
+				var audio_kiana_japan = document.getElementById('audio_kiana_japan');
+				audio_kiana_japan.onclick=function(){
+					kiana_japan.play();
+				}
+				
+				var mei_china = document.getElementById('mei_china');
+				var audio_mei_china = document.getElementById('audio_mei_china');
+				audio_mei_china.onclick=function(){
+					mei_china.play();
+				}
+				
+				var mei_japan = document.getElementById('mei_japan');
+				var audio_mei_japan = document.getElementById('audio_mei_japan');
+				audio_mei_japan.onclick=function(){
+					mei_japan.play();
+				}
+				
+				var himeko_china = document.getElementById('himeko_china');
+				var audio_himeko_china = document.getElementById('audio_himeko_china');
+				audio_himeko_china.onclick=function(){
+					himeko_china.play();
+				}
+				
+				var himeko_japan = document.getElementById('himeko_japan');
+				var audio_himeko_japan = document.getElementById('audio_himeko_japan');
+				audio_himeko_japan.onclick=function(){
+					himeko_japan.play();
+				}
+				
+				var bronya_china = document.getElementById('bronya_china');
+				var audio_bronya_china = document.getElementById('audio_bronya_china');
+				audio_bronya_china.onclick=function(){
+					bronya_china.play();
+				}
+				
+				var bronya_japan = document.getElementById('bronya_japan');
+				var audio_bronya_japan = document.getElementById('audio_bronya_japan');
+				audio_bronya_japan.onclick=function(){
+					bronya_japan.play();
+				}
+				
+				var theresa_china = document.getElementById('theresa_china');
+				var audio_theresa_china = document.getElementById('audio_theresa_china');
+				audio_theresa_china.onclick=function(){
+					theresa_china.play();
+				}
+				
+				var theresa_japan = document.getElementById('theresa_japan');
+				var audio_theresa_japan = document.getElementById('audio_theresa_japan');
+				audio_theresa_japan.onclick=function(){
+					theresa_japan.play();
+				}
+				
+				var video = document.getElementById('video');
+				var video_play_btn = document.getElementById('video_play_btn');
+				var hidden_block = document.getElementById('hidden_block');
+				var close = document.getElementById('close');
+				
+				video_play_btn.onclick=function(){
+					
+					hidden_block.style.display="block";
+					video.play();
+					
+				}
+				close.onclick=function(){
+					hidden_block.style.display="none";
+					video.pause();
+				}
+				
+				var ad = document.getElementById('ad');
+				var ad_close = document.getElementById('ad_close');
+				
+				ad_close.onclick=function(){
+					ad.style.display="none";
+				}
+				
+				
+			}
+			
+		</script>
+	</head>
+	<body>
+		
+		<div class="hidden_block" id="hidden_block" style="display:none">
+			
+			<div class="video">
+				<div class="close" id="close"></div>
+				
+				<video width="1000px" controls="controls" id="video">
+					<source src="video/PV.mp4" type="video/mp4">
+				</video>
+				
+			</div>
+			<div class="black_block"></div>
+			
+		</div>
+		
+		<div class="ad" id="ad" style="display:block">
+			<div class="ad_pic">
+				<div class="ad_close" id="ad_close"></div>
+			</div>
+		</div>
+		
+		<!--顶部横条-->
+		<div class="header">			
+			<!--顶部横条内容-->
+			<div class="header_bg"></div>
+			<!--顶部导航图片集-->
+			<ul>
+				<li><a href="homepage.html"></a></li>
+				<li><a href=""></a></li>
+				<li><a href="contribute.html"></a></li>
+				<li><a href=""></a></li>
+				<li><a href=""></a></li>
+			</ul>
+			
+		</div>
+		<!--顶部横条结束-->
+		
+		<!--中间部分-->
+		<div class="main">
+			
+				
+			<!--背部滚动动画-->
+			<div class="dynamic_stage">
+				<div class="dynamic" id="dynamic"></div>
+			</div>
+				
+			<!--中间主体部分开始-->
+			<div class="content">
+				
+
+				
+				<!--这个块用来居中背景图片-->
+				<div class="bg_block">
+					
+					<!--上边背景图片-->
+					<div class="bg_pic"></div>
+	
+				</div>
+				
+				<!--头部内容-->
+				<div class="content_top">
+					
+					<!--头部播放器按钮-->
+					<div class="video_play">
+						<div class="video_play_btn" id="video_play_btn"></div>
+						<div class="video_play_border"></div>
+					</div>
+					
+					<div class="content_down">
+						
+						<div class="down_weixin">
+							
+							<div class="line"></div>
+							
+						</div>
+						
+						<div class="down_btn">
+							
+							<div class="down_btn1"></div>
+							<div class="down_btn2"></div>
+							
+						</div>
+						
+						<a href="homepage.html" class="down_home"></a>
+					</div>
+					
+				</div>
+				<!--头部内容结束-->
+				
+				<!--中间内容区开始-->
+				<div class="content_area">
+					<!--内容区上部分-->
+					<div class="content_top">
+						<!--轮播图-->
+						<div class="content_state" id="container">
+							<ul id="ul" style="left:0px">
+								<li><a href=""><img src="img/1.png" alt="1.png" /></a></li>
+								<li><a href=""><img src="img/2.png" alt="2.png" /></a></li>
+								<li><a href=""><img src="img/3.png" alt="3.png" /></a></li>
+								<li><a href=""><img src="img/4.png" alt="4.png" /></a></li>
+								<li><a href=""><img src="img/5.png" alt="5.png" /></a></li>
+								<li><a href=""><img src="img/6.png" alt="6.png" /></a></li>
+							</ul>
+							<div class="dot" id="dot">
+								<span index="1" class="on"></span>
+								<span index="2"></span>
+								<span index="3"></span>
+								<span index="4"></span>
+								<span index="5"></span>
+								<span index="6"></span>
+							</div>
+						</div>
+						
+						<div class="pic_left"></div>
+						<div class="pic_right"></div>
+						
+						<!--人物介绍-->
+						<div class="recommend">
+							
+							<div class="kiana">
+								<div class="kiana_top" id="kiana_top"></div>
+								<div class="kiana_border" id="kiana_border">
+									<div class="audio">
+										<div class="audio_top" id="audio_kiana_china"></div>
+										<div class="audio_bottom" id="audio_kiana_japan"></div>
+									</div>
+									<div class="kiana_title"></div>
+									<div class="kiana_recommend"></div>
+									<div class="kiana_photo"></div>
+								</div>
+							</div>
+							
+							<div class="mei">
+								<div class="mei_top" id="mei_top"></div>
+								<div class="mei_border" id="mei_border">
+									<div class="audio">
+										<div class="audio_top" id="audio_mei_china"></div>
+										<div class="audio_bottom" id="audio_mei_japan"></div>
+									</div>
+									<div class="mei_title"></div>
+									<div class="mei_recommend"></div>
+									<div class="mei_photo"></div>
+								</div>
+							</div>
+							
+							<div class="bronya">
+								<div class="bronya_top" id="bronya_top"></div>
+								<div class="bronya_border" id="bronya_border">
+									<div class="audio">
+										<div class="audio_top" id="audio_bronya_china"></div>
+										<div class="audio_bottom" id="audio_bronya_japan"></div>
+									</div>
+									<div class="bronya_title"></div>
+									<div class="bronya_recommend"></div>
+									<div class="bronya_photo"></div>
+								</div>
+							</div>
+							
+							<div class="himeko">
+								<div class="himeko_top" id="himeko_top"></div>
+								<div class="himeko_border" id="himeko_border">
+									<div class="audio">
+										<div class="audio_top" id="audio_himeko_china"></div>
+										<div class="audio_bottom" id="audio_himeko_japan"></div>
+									</div>
+									<div class="himeko_title"></div>
+									<div class="himeko_recommend"></div>
+									<div class="himeko_photo"></div>
+								</div>
+							</div>
+							
+							<div class="theresa">
+								<div class="theresa_top" id="theresa_top"></div>
+								<div class="theresa_border" id="theresa_border">
+									<div class="audio">
+										<div class="audio_top" id="audio_theresa_china"></div>
+										<div class="audio_bottom" id="audio_theresa_japan"></div>
+									</div>
+									<div class="therese_title"></div>
+									<div class="theresa_recommend"></div>
+									<div class="theresa_photo"></div>
+								</div>
+							</div>
+							
+						</div>
+						<!--人物介绍结束-->					
+						
+					</div>
+					<!--内容区上部分结束-->
+					
+				</div>
+				<!--中间内容区结束-->
+				
+				<!--联系我们开始-->
+				<div class="contact">
+						
+					<div class="contact_items">
+						<div class="contact_item1"></div>
+						<div class="contact_item2"></div>
+						<div class="contact_item3"></div>
+						<div class="contact_item4"></div>
+					</div>	
+					
+					<div class="enterhome"></div>
+				</div>
+				<!--联系我们结束-->
+				
+			</div>
+			<!--中间主体部分结束-->
+			
+			<!--左边的旋转背景-->
+			<div class="left_bg">
+				<div class="left_1"></div>
+				<div class="left_2"></div>
+			</div>
+			
+			<!--右边的旋转背景-->
+			<div class="right_bg">
+				<div class="right_1"></div>
+				<div class="right_2"></div>
+				<div class="right_3"></div>
+			</div>
+			
+			<!--底部的旋转背景-->
+			<div class="bottom_bg">
+				<div class="bottom_1"></div>
+				<div class="bottom_2"></div>
+				<div class="bottom_3"></div>
+				<div class="bottom_4"></div>
+			</div>
+			
+
+			
+		</div>
+		<!--中间部分结束-->
+		<div class="bottom">
+				
+				<div class="bottom_content">
+					<div class="logo"></div>
+					<div class="bottom_content_right">
+	
+						<p>▍健康游戏忠告：抵制不良游戏，拒绝盗版游戏。注意自我保护，谨防受骗上当。适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活。</p>
+						<p>▍用户协议： 米哈游游戏使用许可及服务协议   米哈游用户个人信息及隐私保护政策   交易纠纷处理   家长监护工程   防沉迷系统
+						<p>▍适龄提示： 本游戏适合17岁（含）以上玩家娱乐</p>
+<span>沪ICP备14042301号-2 沪网文（2014）0592-182号 文网游备字〔2016〕Ｍ-CSG 1244 号</span>
+<span><a href=""><img src="img/ghs.png" alt="" /></a> 沪公网安备31010402001113号</span>
+<span>2015-2018 All Rights Reserved 上海米哈游网络科技股份有限公司版权所有 <a href=""><img src="img/youxidzbq.png" alt="" /></a><a href=""><img src="img/wenhuajingying.png" alt="" /></a></span>   
+<span>地址：上海市徐汇区宜山路1388号民润大厦12A   电话：86-021-52270738.</span>
+<span>投诉电话：021-34203135                      投诉邮箱：tousu@mihoyo.com <a href="">联系方式</a>     <a href="">加入我们 </a>    <a href="">免责条款</a>     <a href="">法律声明</a></span>						
+						
+					</div>
+				</div>
+				
+		</div>
+		<audio src="audio/kiana_china.mp3" id="kiana_china"></audio>
+		<audio src="audio/kiana_japan.mp3" id="kiana_japan"></audio>
+		<audio src="audio/mei_china.mp3" id="mei_china"></audio>
+		<audio src="audio/mei_japan.mp3" id="mei_japan"></audio>
+		<audio src="audio/himeko_china.mp3" id="himeko_china"></audio>
+		<audio src="audio/himeko_japan.mp3" id="himeko_japan"></audio>
+		<audio src="audio/bronya_china.mp3" id="bronya_china"></audio>
+		<audio src="audio/bronya_japan.mp3" id="bronya_japan"></audio>
+		<audio src="audio/theresa_china.mp3" id="theresa_china"></audio>
+		<audio src="audio/theresa_japan.mp3" id="theresa_japan"></audio>
+	</body>
+</html>

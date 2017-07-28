@@ -1,0 +1,792 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	box-sizing: border-box;
+	text-decoration: none;
+	font-family: "microsoft yahei";
+	font-size: 14px;
+	}
+
+/*顶部横条*/
+.header{
+	width:100%;
+	height: 54px;
+	position: fixed;
+	z-index:100;
+	overflow: hidden;
+	}
+/*顶部横条内容*/
+.header_bg{	
+	width: 1920px;
+	height: 54px;
+	background-image: url(../img/header.png);
+	position:absolute;
+	left:50%;
+	margin-left: -960px;
+	}
+/*顶部导航图片集*/
+.header ul{
+	position: absolute;
+	width:500px;
+	right:45px;
+	}
+.header ul li{
+	display:inline-block;
+	width: 90px;
+	height:48px;
+	background: url(../img/nav-item.png);
+	}
+.header ul li:nth-child(1){
+	background-position:0px 0px;
+	}
+.header ul li:nth-child(2){
+	background-position:0px -115px;
+	}
+.header ul li:nth-child(3){
+	background-position:0px -230px;
+	}
+.header ul li:nth-child(4){
+	background-position:0px -345px;
+	}
+.header ul li:nth-child(5){
+	background-position:0px -460px;
+	}
+.header ul li:nth-child(1):hover{
+	background-position:0px -57px;
+	}
+.header ul li:nth-child(2):hover{
+	background-position:0px -172px;
+	}
+.header ul li:nth-child(3):hover{
+	background-position:0px -287px;
+	}
+.header ul li:nth-child(4):hover{
+	background-position:0px -402px;
+	}
+.header ul li:nth-child(5):hover{
+	background-position:0px -517px;
+	}
+
+.header ul li a{
+	display:block;
+	width: 90px;
+	height:48px;
+	}
+/*顶部横条结束*/
+
+
+.main{
+	display:block;
+	width: 100%;
+	height:3716px;
+	overflow: hidden;
+	}
+
+/*中间主体部分开始*/
+.content{
+	width: 1320px;
+	height:3716px;
+	margin:0 auto;
+	position: relative;
+	top:-940px;
+	}
+/*背景动态图对齐主体部分左边,等同于对齐浏览器*/
+.dynamic{
+	width:5740px;
+	height: 940px;
+	background: url(../img/sky.jpg);
+	position: relative;
+	left: 0px;
+	z-index: -10;
+	}
+
+/*背景图片需要对齐中间的块,可以看到图片主要部分*/
+.bg_block{
+	width: 1020px;
+	margin:0 auto;
+	position: relative;
+	}
+.bg_pic{
+	width:1920px;
+	height:3716px;
+	position: absolute;
+	left: 50%;
+	margin-left: -960px;
+	background: url(../img/bg.png);
+	z-index: 1;
+	}
+
+/*头部的内容区域*/
+.content_top{
+	width:1020px;
+	margin:0 auto;
+	position:relative;
+	}
+.video_play{
+	width:100px;
+	height:100px;
+	position:absolute;
+	left:50%;
+	margin-left:-50px;
+	top:540px;
+	}
+.video_play_btn{
+	width: 80%;
+	height:80%;
+	background: url(../img/media.png);
+	background-size: 100% auto;
+	position: absolute;
+	z-index: 3;
+	}
+.video_play_btn:hover{
+	background: url(../img/media-hover.png);
+	background-size: 100% auto;
+	}
+.video_play_border{
+	width: 80%;
+	height: 80%;
+	background: url(../img/media-clockwise.png) no-repeat;
+	background-size:100% auto;
+	position: absolute;
+	animation:rotate 3s linear infinite;
+	z-index:2;
+	}
+@keyframes rotate{
+	from{
+		transform: rotate(0deg);
+	}
+	to{
+		transform: rotate(360deg);
+	}
+}
+@keyframes rotateF{
+	from{
+		transform: rotate(360deg);
+	}
+	to{
+		transform: rotate(0deg);
+	}
+}
+
+
+/*头部下载块*/
+.content_down{
+	position: absolute;
+	width: 660px;
+	height: 141px;
+	top: 750px;
+	left: 50%;
+	margin-left: -510px;
+	z-index:2;
+	}
+.down_weixin{
+	display: inline-block;
+	width:154px;
+	height: 141px;
+	background: url(../img/download-qrcode.png);
+	margin-right: 15px;
+	position:relative;
+	}
+.line{
+	width: 154px;
+	height: 12px;
+	background: url(../img/line.png);
+	position:absolute;top:0px;
+	animation:line_bg 2s linear infinite;
+	}
+@keyframes line_bg {
+	from{
+		transform:translateY(10px);
+	}
+	to{
+		transform:translateY(125px);
+	}
+}
+.down_btn{
+	display:inline-block;
+	height: 141px;
+	}
+.down_btn1{
+	width:203px;
+	height:63px;
+	background: url(../img/download.png) -2px -2px;
+	border-radius: 5px;
+	}
+.down_btn1:hover{
+	width:203px;
+	height:63px;
+	background: url(../img/download.png) -208px -2px;
+	}
+.down_btn2{
+	width:203px;
+	height:63px;
+	background: url(../img/download.png) -2px -69px;
+	margin-top: 15px;
+	border-radius: 5px;
+	}
+.down_btn2:hover{
+	width:203px;
+	height:63px;
+	background: url(../img/download.png) -208px -69px;
+	}
+.down_home{
+	width:220px;
+	height:258px;
+	background: url(../img/homepage-link.png);
+	position: absolute;
+	right: 0px;bottom:0px;
+	}
+.down_home:hover{
+	width:220px;
+	height:258px;
+	background: url(../img/homepage-link.png) -220px 0px;
+	}
+
+
+/*中间内容区*/
+.content_area{
+	width: 1049px;
+	height:2300px;
+	background: url(../img/content-wrapper.png)  no-repeat center left;
+	position:relative;
+	left: 50%;
+	margin-left:-525px;
+	top:940px;
+	z-index:2;
+	}
+
+/*内容区上部分*/
+.content_top{
+	width: 1049px;
+	background: url(../img/content-wrapper.png)  no-repeat center left;
+	position:relative;
+	}
+
+/*轮播图*/
+.content_state{
+	width: 976px;
+	height: 561px;
+	left:50%;
+	margin-left:-488px;
+	overflow: hidden;
+	position: relative;
+	margin-top:150px;
+	position: absolute;}
+.content_state ul{
+	width:5877px;
+	position: absolute;
+	}
+.content_state ul li{
+	display: inline-block;
+	width:976px;
+	}
+/*轮播图下表*/
+.dot{
+	position:absolute;
+	width:250px;
+	height:30px;
+	top:520px;
+	left:380px;
+	z-index: 1;
+	}
+.dot span{
+	display:inline-block;
+	width: 15px;
+	height: 15px;
+	border-radius:8px;
+	box-shadow: 0px 0px 5px #ffb400;
+	background: #ffca4c;
+	margin: 0px 4px;
+	}
+.dot .on{
+	width:50px;
+	}
+
+.pic_left{
+	position:absolute;
+	width:600px;
+	height:600px;
+	left: 50%;
+	top: 150px;
+	margin-left: -888px;
+	background: url(../img/left-decorate.png);
+	z-index:5;
+	}
+.pic_right{
+	position:absolute;
+	width:600px;
+	height:600px;
+	left: 50%;
+	top: 405px;
+	margin-left: 285px;
+	background: url(../img/right-decorate.png);
+	z-index:5;
+	}
+
+
+/*人物介绍*/
+.recommend{
+	width:965px;
+	position:absolute;
+	left:50%;
+	margin-left:-482px;
+	top:870px;
+	}
+
+.kiana,.mei,.bronya,.himeko,.theresa{
+	width: 965px;
+	position:relative;
+	}
+
+.kiana_top{
+	background:url(../img/kiana-title.png) 0px 0px;
+	height:179px;
+	}
+.kiana_top:hover{
+	background:url(../img/kiana-title.png) 0px -179px;
+	}
+.mei_top{
+	background: url(../img/mei-title.png) 0px 0px;
+	height:179px;
+	}
+.mei_top:hover{
+	background: url(../img/mei-title.png) 0px -179px;
+	}
+.bronya_top{
+	background: url(../img/bronya-title.png) 0px 0px;
+	height:179px;
+	}
+.bronya_top:hover{
+	background: url(../img/bronya-title.png) 0px -179px;
+	}
+.himeko_top{
+	background: url(../img/himeko-title.png) 0px 0px;
+	height:179px;
+	}
+.himeko_top:hover{
+	background: url(../img/himeko-title.png) 0px -179px;
+	}
+.theresa_top{
+	background: url(../img/theresa-title.png) 0px 0px;
+	height:179px;
+	}
+.theresa_top:hover{
+	background: url(../img/theresa-title.png) 0px -179px;
+	}
+
+
+
+.audio{
+	width:100px;
+	height:224px;
+	position: absolute;
+	left: 50%;
+	margin-left: -58px;
+	top:370px;
+	z-index: 5;
+	}
+.audio_top{
+	width:100px;
+	height:112px;
+	background: url(../img/cv.png) -8px -8px;
+	}
+.audio_bottom{
+	width: 100px;
+	height: 112px;
+	background: url(../img/cv.png) -8px -130px;
+	}
+.audio_top:hover{
+	width:100px;
+	height:112px;
+	background: url(../img/cv.png) -8px -268px;
+	}
+.audio_bottom:hover{
+	width: 100px;
+	height: 112px;
+	background: url(../img/cv.png) -8px -390px;
+	}
+
+
+.kiana_border,.mei_border,.bronya_border,.himeko_border,.theresa_border{
+	width: 955px;
+	height:680px;
+	border-radius: 40px;
+	border:4px solid lightblue;
+	margin: 5px auto;
+	background: url(../img/frame-bg.png);
+	position:relative;
+	transition-duration: 0.5s;
+	}
+
+
+.kiana_title{
+	background:url(../img/kiana-title.png) 0px -179px;
+	width:965px;
+	height:179px;
+	position: absolute;
+	left: 50%;
+	top:-10px;
+	margin-left: -483px;
+	}
+.kiana_recommend{
+	width:287px;
+	height: 381px;
+	background: url(../img/kiana-info.png);
+	position: absolute;
+	bottom:40px;
+	left: 30px;
+	z-index: 4;
+	}
+.kiana_photo{
+	position:absolute;
+	width:716px;
+	height: 634px;
+	background: url(../img/kiana.png);
+	bottom: 0px;
+	right: -25px;
+	z-index: 3;
+	}
+
+.mei_title{
+	background:url(../img/mei-title.png) 0px -179px;
+	width:965px;
+	height:179px;
+	position: absolute;
+	left: 50%;
+	top:-10px;
+	margin-left: -483px;
+	}
+.mei_recommend{
+	width:219px;
+	height: 381px;
+	background: url(../img/mei-info.png);
+	position: absolute;
+	bottom:40px;
+	right: 30px;
+	z-index: 4;
+	}
+.mei_photo{
+	position:absolute;
+	width:639px;
+	height: 630px;
+	background: url(../img/mei.png);
+	bottom: 0px;
+	left: -25px;
+	z-index: 3;
+	}
+
+.bronya_title{
+	background:url(../img/bronya-title.png) 0px -179px;
+	width:965px;
+	height:179px;
+	position: absolute;
+	left: 50%;
+	top:-10px;
+	margin-left: -483px;
+	}
+.bronya_recommend{
+	width:326px;
+	height: 381px;
+	background: url(../img/bronya-info.png);
+	position: absolute;
+	bottom:40px;
+	left: 30px;
+	z-index: 4;
+	}
+.bronya_photo{
+	position:absolute;
+	width:625px;
+	height: 611px;
+	background: url(../img/bronya.png);
+	bottom: 0px;
+	right: -25px;
+	z-index: 3;
+	}
+
+.himeko_title{
+	background:url(../img/himeko-title.png) 0px -179px;
+	width:965px;
+	height:179px;
+	position: absolute;
+	left: 50%;
+	top:-10px;
+	margin-left: -483px;
+	}
+.himeko_recommend{
+	width:287px;
+	height: 381px;
+	background: url(../img/himeko-info.png);
+	position: absolute;
+	bottom:40px;
+	right: 30px;
+	z-index: 4;
+	}
+.himeko_photo{
+	position:absolute;
+	width:803px;
+	height: 630px;
+	background: url(../img/himeko.png);
+	bottom: 0px;
+	left: -205px;
+	z-index: 3;
+	}
+
+.therese_title{
+	background:url(../img/theresa-title.png) 0px -179px;
+	width:965px;
+	height:179px;
+	position: absolute;
+	left: 50%;
+	top:-10px;
+	margin-left: -483px;
+	}
+.theresa_recommend{
+	width:364px;
+	height: 381px;
+	background: url(../img/theresa-info.png);
+	position: absolute;
+	bottom:40px;
+	left: 30px;
+	z-index: 4;
+	}
+.theresa_photo{
+	position:absolute;
+	width:840px;
+	height: 707px;
+	background: url(../img/theresa.png);
+	bottom: 0px;
+	right: -205px;
+	z-index: 3;
+	}
+/*人物介绍结束*/
+
+/*联系我们*/
+.contact{
+	width: 1049px;
+	height: 635px;
+	position:relative;
+	left: 50%;
+	margin-left:-525px;
+	top:940px;
+	background: url(../img/contact-wrapper.png);
+	z-index:2;
+	}
+.contact_items{
+	width: 940px;
+	height: 123px;
+	position:absolute;
+	left:50%;
+	margin-left:-470px;
+	top:170px;
+	}
+.contact_item1,.contact_item2,.contact_item3,.contact_item4{
+	float:left;
+	width: 233px;
+	height: 123px;
+	border:1px solid #CCC;
+	margin:1px;
+	}
+.contact_item1{
+	background: url(../img/contact.png) -2px -2px;
+	}
+.contact_item2{
+	background: url(../img/contact.png) -2px -139px;
+	}
+.contact_item3{
+	background: url(../img/contact.png) -2px -277px;
+	}
+.contact_item4{
+	background: url(../img/contact.png) -2px -414px;
+	}
+.enterhome{
+	position:absolute;
+	left:50%;
+	margin-left:-95px;
+	top:330px;
+	width: 190px;
+	height: 60px;
+	background: url(../img/goto-homepage.png) -2px -2px;
+	}
+.enterhome:hover{
+	background: url(../img/goto-homepage.png) -2px -76px;
+	}
+
+.left_bg{
+	width: 618px;
+	height: 618px;
+	z-index:1;
+	position:relative;
+	top:-3080px;
+	left:50%;
+	margin-left:-950px;
+	}
+.left_1,.left_2{
+	width: 618px;
+	height: 618px;
+	position:absolute;
+	}
+.left_1{
+	background: url(../img/618_1.png);
+	animation:rotate 25s linear infinite;
+	}
+.left_2{
+	background: url(../img/618_2.png);
+	animation:rotateF 25s linear infinite;
+	}
+
+.right_bg{
+	width: 618px;
+	height: 618px;
+	z-index:1;
+	position:relative;
+	top:-3080px;
+	left:50%;
+	margin-left:500px;
+	}
+.right_1,.right_2,.right_3{
+	width:618px;
+	height:618px;
+	position:absolute;
+	}
+.right_1{
+	background: url(../img/600_1.png);
+	animation:rotate 25s linear infinite;
+	}
+.right_2{
+	background: url(../img/600_2.png);
+	animation:rotateF 25s linear infinite;
+	}
+.right_3{
+	background: url(../img/600_3.png);
+	animation:rotate 25s linear infinite;
+	}
+
+/*底部的旋转背景*/
+.bottom_bg{
+	width: 1852px;
+	height: 1852px;
+	z-index:1;
+	position:relative;
+	top:-3140px;
+	left:50%;
+	margin-left:-926px;
+	}
+.bottom_1,.bottom_2,.bottom_3,.bottom4{
+	width: 1852px;
+	height: 1852px;
+	position:absolute;
+	}
+.bottom_1{
+	background: url(../img/1852_1.png);
+	animation:rotate 20s linear infinite;
+	}
+.bottom_2{
+	background: url(../img/1852_2.png);
+	animation:rotateF 20s linear infinite;
+	}
+.bottom_3{
+	background: url(../img/1852_3.png);
+	animation:rotate 20s linear infinite;
+	}
+.bottom_4{
+	background: url(../img/1852_4.png);
+	animation:rotateF 20s linear infinite;
+	}
+
+.bottom{
+	width: 100%;
+	height: 200px;
+	border-top:1px solid #CCC;
+	position:relative;z-index:3;
+	}
+.bottom_content{
+	width: 1049px;
+	margin:0 auto;
+	}
+.bottom_content_right{	
+	float:left;width:832px;
+	font-size:12px;
+	color:#666;
+	font-family:"microsoft yahei";
+	padding:20px;
+	}
+.bottom_content_right span{
+	line-height:24px;
+	display:block;
+	}
+.bottom_content_right img{
+	width: 20px;
+	margin:5px;
+	position:relative;
+	top:10px;
+	}
+.bottom_content_right a{
+	text-decoration:none;
+	color:#666;
+	}
+.logo{
+	float:left;
+	width: 217px;
+	height: 200px;
+	background: url(../img/miHoYo_Games.png) no-repeat center center;
+	background-size:80% auto;
+	}
+
+.hidden_block{
+	width: 100%;
+	height: 100%;
+	position:fixed;
+	z-index:1000;
+	}
+.video{
+	position:absolute;
+	width:1000px;
+	height:563px;
+	left:50%;
+	top:50%;
+	margin-left:-500px;
+	margin-top:-282px;
+	z-index:1001;
+	background: black;
+	}
+.black_block{
+	width: 100%;
+	height: 100%;
+	background:black;
+	opacity:0.6;
+	position:absolute;
+	}
+.close{
+	position:absolute;
+	width: 63px;
+	height: 62px;
+	background: url(../img/x.jpg);
+	top:-30px;
+	right:-30px;
+	}
+
+.ad{
+	width:400px;
+	height:288px;
+	position:fixed;
+	z-index:100;
+	right:0px;
+	bottom:0px;
+	}
+.ad_pic{
+	width:400px;
+	height:288px;
+	background: url(../img/notice.jpg);
+	background-size:100%;
+	position:relative;
+	}
+.ad_close{
+	width:20px;
+	height:20px;
+	background: url(../img/x.jpg);
+	background-size:100%;
+	position:absolute;
+	top:0px;
+	right:0px;
+	}

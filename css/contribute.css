@@ -1,0 +1,329 @@
+*{
+	margin:0px;
+	padding:0px;
+	list-style:none;
+	font-family:"microsoft yahei"
+}
+/*轮播图*/
+.content_state{
+	width: 920px;
+	height: 163px;
+	left:50%;
+	margin-left:-460px;
+/*	top:300px;*/
+	overflow: hidden;
+	position: relative;
+	margin-top:20px;
+	position: absolute;}
+.content_state ul{
+	width:6440px;
+	position: absolute;
+	}
+.content_state ul li{
+	display: inline-block;
+	width:920px;
+	height:163px;
+	}
+.content_state img{
+	width:920px;
+	height:163px;
+}
+/*轮播图下表*/
+.dot{
+	position:absolute;
+	width:250px;
+	height:30px;
+	left:800px;
+	top:130px;
+	z-index: 1;
+	}
+.dot span{
+	display:inline-block;
+	width: 10px;
+	height: 10px;
+	border-radius:5px;
+	box-shadow: 0px 0px 5px #333;
+	background: #CCC;
+	margin: 0px 2px;
+	}
+.dot .on{
+	background: #f05b93;
+	}
+	
+
+/*
+ .--,       .--,
+( (  \.---./  ) )
+ '.__/o   o\__.'
+    {=  ^  =}
+     >  -  <
+    /       \
+   //       \\
+  //|   .   |\\
+  "'\       /'"_.-~^`'-.
+     \  _  /--'         `
+   ___)( )(___
+  (((__) (__)))		
+  
+  
+  							
+              \     /
+              \\   //
+               )\-/(
+               /e e\
+              ( =T= )
+              /`---'\
+         ____/ /___\ \
+    \   /   '''     ```~~"--.,_
+ `-._\ /                       `~~"--.,_
+------>|                                `~~"--.,_
+ _.-'/ \                            ___,,,---""~~``'
+    /   \____,,,,....----""""~~~~````
+    
+
+
+               _(_)_                        wWWWw
+   @@@@       (_)@(_)  vVVVv    _     @@@@  (___)
+  @@()@@ wWWWw  (_)\   (___)  _(_)_  @@()@@   Y
+   @@@@  (___)     `|/   Y   (_)@(_)  @@@@   \|/
+    /      Y       \|   \|/   /(_)    \|      |/
+ \ |     \ |/       | /\ | / \|/       |/    \|
+   |///  \\|/// \\\\|//\\|///\|///  \\\|//  \\|//
+^^^^^^ 百 ^^^^^^^^^^^^^ 花 ^^^^^^^^^^^^^^^ 园 ^^^^^
+
+
+
+*/
+.arena{
+	width:100%;
+	overflow:hidden;
+	background: url(../img/frame-bg.png);
+}
+
+.content{
+	width:100%;
+	height:1800px;
+}
+.top{
+	width:100%;
+	height:250px;
+	background: url(../contributeimg/head-bg.jpg);
+	position:relative;
+}
+.head_pic{
+	width:60px;
+	height:60px;
+	position:absolute;
+	background: url(../contributeimg/icon.png);
+	background-size:100% 100%;
+	top:15px;
+	left:10px;
+	z-index:1;
+}
+.head_between{
+	display:inline-block;
+	width:1028px;
+	height:50px;
+	margin-left:0px;
+}
+.head_home{
+	position:absolute;
+	text-decoration:none;
+	width:130px;
+	top:20px;
+	right:0px;
+}
+.head_home p{
+	display:inline;
+	width:80px;
+	line-height:30px;
+	font-size:20px;
+	color:gray;
+}
+.head_home span{
+	float:right;
+	width:50px;
+	height:30px;
+	background: url(../contributeimg/goto.png) no-repeat center center;
+	background-size:auto 80%;
+}
+.top_bg{
+	width:1028px;
+	height:276px;
+	position:relative;
+	margin:0 auto;
+}
+.banner_bg{
+	width:1920px;
+	height:276px;
+	position:relative;
+	left:50%;
+	margin-left:-960px;
+	background: url(../contributeimg/banner_bg.png);
+}
+.ios_down,.android_down{
+	width:150px;
+	height:50px;
+	position:absolute;
+	top:180px;
+}
+.ios_down{
+	background: url(../contributeimg/ios.png);
+	background-size:100% 100%;
+	right:170px;
+}
+.android_down{
+	background: url(../contributeimg/android.png);
+	background-size:100% 100%;
+	right:0px;
+}
+.top_nav{
+	margin:0 auto;
+	width:1028px;
+	height:100px;
+	padding:0px 100px;
+}
+.nav1,.nav2,.nav3,.nav4{
+	float:left;
+	width:250px;
+	height:65px;
+}
+.nav1{
+	background: url(../contributeimg/nav1.png) no-repeat center center;
+	background-size:70% 100%;
+}
+.nav2{
+	background: url(../contributeimg/nav2.png) no-repeat center center;
+	background-size:65% 95%;
+}
+.nav3{
+	background: url(../contributeimg/nav3.png) no-repeat center center;
+	background-size:65% 95%;
+}
+.nav4{
+	background: url(../contributeimg/nav4.png) no-repeat center center;
+	background-size:65% 95%;
+}
+
+.frame{
+	width:928px;
+	height:1200px;
+	border:2px solid #FFC0CB;
+	border-radius:10px;
+	position:relative;
+	top:170px;
+	left:50%;
+	margin-left:-514px;
+	background: white;
+	padding:20px 50px;
+}
+.input1{
+	width:191px;
+	height:30px;
+	position:relative;
+}
+.input1 input{
+	width:191px;
+	height:30px;
+	border-radius:5px;
+	border:1px solid #CCC;
+	font-size:14px;
+	padding-left:5px;
+}
+.input1 span{
+	position:absolute;
+	top:5px;
+	right:5px;
+	width:20px;
+	height:20px;
+	background: url(../contributeimg/search_submit.png);
+	background-size:100% 100%;
+	
+}
+
+.more{
+	position:absolute;
+	right:50px;
+	top:30px;
+	width:150px;
+	height:16px;
+	background: url(../contributeimg/more.png) no-repeat right center;
+	background-size:80% 100%;
+}
+.contribute_title{
+	margin:0 auto;
+	width:800px;
+	height:280px;
+	background: url(../contributeimg/title_1.png) no-repeat center bottom;
+	background-size: auto 20%;
+}
+.contribute_items ul{
+	width:1000px;
+}
+.contribute_items ul li{
+	float:left;
+	width:280px;
+	height:248px;
+	padding:20px;
+	position:relative;
+/*	border:1px solid gray;*/
+}
+.contribute_items ul li p{
+	text-align:center;
+}
+.contribute_items ul li span{
+	color:#666;
+	display:block;
+	text-align:center;
+}
+.xin{
+	background: url(../contributeimg/f1.png);
+	width:30px;
+	height:30px;
+	background-size:100% 100%;
+	position:absolute;
+	right:20px;
+	bottom:20px;
+}
+
+
+.bottom{
+	width: 100%;
+	height: 200px;
+	border-top:1px solid #CCC;
+	position:relative;
+	z-index:3;
+	background: white;
+	}
+.bottom_content{
+	width: 1090px;
+	margin:0 auto;
+	}
+.bottom_content_right{	
+	float:left;width:832px;
+	font-size:12px;
+	color:#666;
+	font-family:"microsoft yahei";
+	padding:20px;
+	}
+.bottom_content_right span{
+	line-height:24px;
+	display:block;
+	}
+.bottom_content_right img{
+	width: 20px;
+	margin:5px;
+	position:relative;
+	top:10px;
+	}
+.bottom_content_right a{
+	text-decoration:none;
+	color:#666;
+	}
+.logo{
+	float:left;
+	width: 217px;
+	height: 200px;
+	background: url(../img/miHoYo_Games.png) no-repeat center center;
+	background-size:80% auto;
+	}

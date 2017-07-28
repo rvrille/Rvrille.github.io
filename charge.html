@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/hsod2.css" />
+		<script>
+			window.onload= function(){
+				
+				var username = document.getElementById('username');
+				var money = document.getElementById('money');
+				var moneylabel = document.getElementById('moneylabel');
+				var namelabel = document.getElementById('namelabel');
+				var btn = document.getElementById('btn');
+				
+				
+				var reg = /小明|苍井空|小泽玛丽亚/;
+				var reg2 = /^[0-9]+$/;
+				
+				username.onfocus=function(){
+					namelabel.innerHTML="";
+					
+				}
+				username.onblur=function(){
+					
+					if(username.value==""){
+						namelabel.innerHTML="用户名不能为空！";
+					}else if(!reg.exec(username.value)){
+						namelabel.innerHTML="该用户名未注册！请重新输入";
+					}else{
+						namelabel.innerHTML="<font color=\"green\"\>此用户名可用!!</font>"	;
+					};
+				}
+				money.onfocus=function(){
+					moneylabel.innerHTML="";
+				}
+				money.onblur = function(){
+					if(reg2.exec(money.value)==""){
+						moneylabel.innerHTML="金额不能为空！";
+					}else if(!reg2.exec(money.value)){
+						moneylabel.innerHTML="金额输入错误！请重新输入！";
+					};	
+				}
+				
+				
+				btn.onclick=function(){
+					if(!reg.exec(username.value)){
+						alert("用户名输入错误！请重新输入！")
+					}else if(!reg2.exec(money.value)){
+						alert("金额输入错误！请重新输入！");
+					}else{
+						alert("充值成功！")
+					}
+					
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<div class="arena">
+					
+			<!--网站主体部分-->
+			<div class="content">
+				
+				<div class="bg_1"></div>
+				<div class="bg_2"></div>
+				<div class="bg_3"></div>
+				<div class="bg_5"></div>
+				
+				<div class="top">
+					<div class="top_nav">
+						<a href="homepage.html">官网首页</a>
+						<a href="charge.html">游戏充值</a>
+						<a href="">游戏引导</a>
+						<a href="gl_chara.html">游戏资料</a>
+						<a href="">相关下载</a>
+					</div>
+					<div class="logo"></div>
+				</div>
+				
+				<div class="charge_between">
+					
+					<div class="charge_left">
+						<div class="charge_down">
+							<span>游戏下载</span>
+							
+							<div class="charge_ios">下载iOS版</div>
+							
+							<div class="charge_android">下载安卓版</div>							
+						</div>
+						
+						<div class="charge_contain">
+							<span>客服中心</span>
+							<p>客服娘QQ：800022859</p>
+							<p>客服邮箱： <a href="">kefu@mihoyo.com</a></p>
+						</div>
+						
+						<div class="charge_weibo">
+							<span>官方微博</span>
+							<div class="weibo_bottom">
+								<div class="weibo_left"></div>
+								<div class="weibo_right">
+									崩坏学园<span></span><p>上海</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="charge_right">
+						<div class="charge_title">
+							游戏充值
+							<span>&gt;&gt;返回首页</span>
+						</div>
+						
+						<div class="charge_content">
+							<h3>账户信息</h3>
+
+							<p>账号名： <input type="text" placeholder="输入绑定的账号名" id="username"/> </p> <label for="" id="namelabel" value=""></label>
+							<p>自选金额：<input type="text" placeholder="自选充值金额>=1000" id="money"/> 选填</p><label for="" id="moneylabel" value=""></label>
+							<p>选择分区：
+									<select name="" id="">
+										<option value="">国服</option>
+										<option value="">测试服</option>
+									</select></p>
+							<p>如果是游戏内相应额度6，30，128，328，648进行充值，输入游戏帐号后，请直接点击提交。</p>
+							<p><input type="submit" value="提交" id="btn"/></p>
+ 
+							<div class="pay"><p>支持付款方式:</p>  <div class="pay_pic"></div> </div>
+							<h3>《崩坏学园2》官方代充平台保证使用合法的正规支付途径为用户充值！</h3>
+							<dl>
+								<dt>温馨提示</dt>
+								
+								<dd>1. 目前只支持国服和测试服的充值。</dd>
+								<dd>2. 如果是游戏内相应额度6，30，128，328，648进行充值，输入游戏帐号后，请直接点击提交。</dd>
+								<dd>3. 其他金额充值，请大于等于1000</dd>
+								<dd><span>4. 暂时不支持活动商品“330水晶（限购买一次）”的购买。</span></dd>
+								<dd><span>5. 暂时不支持活动商品“1280水晶 另赠1280水晶（限购买一次）”的购买。</span></dd>
+								<dd><span>6. 暂时不支持活动商品“3280水晶 另赠3280水晶（限购买一次）”的购买。</span></dd>
+								<dd><span>7. 暂时不支持活动商品“6480水晶 另赠6480水晶（限购买一次）”的购买。</span></dd>
+								<dd><strong>8. 购买月卡后，需在游戏内信箱点击领取，月卡才会被激活。</strong></dd>
+								<dd><strong>9. 请勿过多购买月卡，月卡累计超过180天可能会充值不到帐等问题。</strong></dd>
+							</dl>
+							<dl>
+								<dt>服务说明</dt>
+								
+								<dd>1. 本服务将为没有信用卡的中国大陆用户提供充值服务。同时中国大陆地区受到苹果官方"单日充值额度限制"，或部分数额价格无法完成充值的合法用户，以及部分因越狱造成不能正常在AppStore充值的用户，也可以使用《崩坏学园2》官方代充平台实现随心充值。</dd>
+								<dd>2. 本服务仅面向绑定了游戏帐号的用户。没有进行绑定的用户需要在游戏中完成绑定操作才能使用本服务。</dd>
+								<dd><strong>3. 重要：输入帐号后，请仔细核对显示的账户信息，确认无误后再进行下一步操作！</strong></dd>
+								<dd>4. 付款成功后，系统将发送邮件，请您在“基友消息”功能中查收。 若您在充值成功后30分钟后还没有收到邮件，请联系<strong>客服QQ800022859</strong>，我们将第一时间为您解决问题。</dd>
+							</dl>
+						</div>
+					</div>
+					
+				</div>
+				
+				<div class="bottom">
+					<a href="">未成年人家长监护机制</a>
+					<p>Copyright © 2015-2018 MIHOYO CO, LTD. ALL RIGHTS RESERVED.<span></span></p>
+				</div>
+				
+			</div>
+			<!--网站主体部分-->
+			
+
+			
+		</div>
+		<!--网站整体结束-->	
+	</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/contribute.css" />
+
+<script>
+	window.onload=function(){
+/*学员轮播*/
+
+    	var animat = false;    
+        var index = 1;         
+        
+
+        var Ul = document.getElementById('ul');
+        var dots = document.getElementById('dot').getElementsByTagName('span');
+
+        checkIndex();
+       
+        var int = setInterval(function(){next()},2000);
+
+        
+
+
+       
+        function next(){
+            if(animat){
+                return false;
+            }
+            var width = parseInt(Ul.style.left);
+           
+            var next_width = width - 926;
+
+          
+            index = (++index > 5)? 1: index;
+         
+            animation(width, next_width);
+        }
+
+       
+        function pre(){
+
+            if(animat){
+                return false;
+            }
+            var width = parseInt(Ul.style.left);
+           
+            var next_width = width + 926;
+            index = (--index < 1)? 5: index;
+           
+            animation(width, next_width);
+        }
+       
+
+       
+        function animation(width, next_width, one_time, interval){
+            
+           
+            if(animat){
+                return false;
+            }
+
+         
+            checkIndex();
+
+           
+            animat = true;
+          
+            one_time = one_time || 250;        
+          
+            interval = interval || 10;
+
+        
+            var offset = (next_width-width)/(one_time/interval);
+
+
+            go(width, offset, next_width);
+
+           
+            function go(w, offset, next_width){
+
+             
+                Ul.style.left = w+'px';  
+
+                
+                w += offset;
+                
+    
+                if(w >= next_width && width > next_width || w<=next_width && width<next_width){
+                     setTimeout(function(){
+                            
+                            go(w, offset, next_width);
+                        },interval);
+                 }else{
+                  
+                   
+                    if(next_width <= -4630){
+                        Ul.style.left = 0 +'px';
+                    }else{
+                        Ul.style.left = next_width+'px';
+                    }
+
+                    animat = false;
+                 }
+            }
+        }
+
+      
+        function checkIndex(){
+
+            for(var n=0; n<dots.length; n++){
+                dots[n].className = '';
+            }
+           
+            dots[index-1].className = 'on';
+        }
+        
+      
+        for(var n=0; n<dots.length; n++){
+            dots[n].onclick = function(){
+                if(animat){
+                    return false;
+                }
+
+               
+                var new_index = this.getAttribute('index');
+	             
+               
+                var width = parseInt(Ul.style.left);  
+
+               
+                var next_width = new_index*-926;
+                
+                
+                indexs = new_indexs;
+               if(width!=next_width){
+                	animation(width, next_width);
+               }
+            }
+        }
+
+        var container = document.getElementById('container');
+        
+        container.onmouseover=function(){
+          
+            clearInterval(int);
+        };
+       
+        container.onmouseout = function(){
+            int = setInterval(function(){next()},2000);
+        }
+        
+        
+        var uls = document.getElementById('uls');
+        var arr = [
+        	['contributeimg/avatar_2017-01-18-18-24-52-79141418.jpeg','八重樱泳装~！','掉线狂魔☆火星'],
+        	['contributeimg/avatar_2017-01-17-21-32-30-68377608.jpeg','黑猫','华耶'],
+        	['contributeimg/avatar_2017-01-17-21-28-25-57597931.jpeg','耀夜姬','华耶'],
+        	['contributeimg/avatar_2017-02-17-22-46-34-81734141.jpeg','三周年纪念~','掉线狂魔☆火星'],
+        	['contributeimg/avatar_2017-01-18-14-06-56-87488639.jpeg','黑化Kiana','华耶'],
+        	['contributeimg/avatar_2017-01-17-22-47-44-88898713.jpeg','糖果少女 安妮','twg'],
+        	['contributeimg/avatar_2017-01-18-18-31-15-25076115.jpeg','大锤娘','掉线狂魔☆火星'],
+        	['contributeimg/avatar_2017-01-17-20-40-46-15796279.jpeg','人形party','间氯乙豆'],
+        	['contributeimg/avatar_2017-01-18-18-36-35-61774075.jpeg','姬子~','掉线狂魔☆火星']
+        ];
+        var str='';
+        for(var i=0; i<9; i++){
+        	str += '<li><img src=\"'+arr[i][0]+'\" alt="" width="284px" height="204px"\/\>';
+			str +=	'<p>'+arr[i][1]+'</p>';
+			str +=	'<span>'+arr[i][2]+'</span><div class="xin"></div></li>';
+        }
+        uls.innerHTML = str;      
+    }
+		</script>
+	</head>
+	<body>
+		<!--网站大舞台开始-->
+		<div class="arena">
+			
+			<!--网站主要内容开始-->
+			<div class="content">
+				
+				<div class="top">
+					
+					<div class="head_pic"></div><!--这个东西是官网左上角的小头像-->
+					<div class="head_between"></div><!--这个块是用来隔开两个块之间距离用的-->
+					<a href="index.html" class="head_home"><p>前往官网</p><span></span></a><!--这个就不解释了-->
+					
+					<div class="top_bg">
+						<div class="banner_bg"></div>
+						<div class="ios_down"></div>
+						<div class="android_down"></div>
+					</div>
+					
+					<div class="top_nav">
+
+						<div class="nav1"></div>
+						
+						<div class="nav2"></div>
+						
+						<div class="nav3"></div>
+						
+						<div class="nav4"></div>
+						
+					</div>
+				</div>
+				<!--中间内容区-->
+				<div class="frame">
+						
+						<div class="input1">
+							<input type="text" placeholder="请输入作品ID或关键词"/>
+							<span></span>
+						</div>
+						
+						<div class="more"></div>
+						
+						<!--轮播图-->
+						<div class="content_state" id="container">
+							<ul id="ul" style="left:-926px">
+								<li><a href=""><img src="contributeimg/banner5.png" alt="1.png" /></a></li>
+								<li><a href=""><img src="contributeimg/banner1.png" alt="2.png" /></a></li>
+								<li><a href=""><img src="contributeimg/banner2.png" alt="3.png" /></a></li>
+								<li><a href=""><img src="contributeimg/banner3.png" alt="4.png" /></a></li>
+								<li><a href=""><img src="contributeimg/banner4.png" alt="5.png" /></a></li>
+								<li><a href=""><img src="contributeimg/banner5.png" alt="6.png" /></a></li>
+								<li><a href=""><img src="contributeimg/banner1.png" alt="6.png" /></a></li>
+							</ul>
+							<div class="dot" id="dot">
+								<span index="1" class="on"></span>
+								<span index="2"></span>
+								<span index="3"></span>
+								<span index="4"></span>
+								<span index="5"></span>
+							</div>
+						</div>
+						
+						<div class="contribute_title"></div>
+						
+						<div class="contribute_items">
+							
+							<ul id="uls">
+								<!--<li>
+									<img src="contributeimg/1.png" alt="" width="284px" height="204px"/>
+									<p>三周年纪念~</p>
+									<span>掉线狂魔</span>
+									<div class="xin"></div>
+								</li>-->
+							</ul>
+							
+						</div>
+						
+				</div>	
+				<!--中间内容区结束-->
+
+				
+			</div>			
+			<!--网站主要内容结束-->		
+			
+			<div class="bottom">
+				
+				<div class="bottom_content">
+					<div class="logo"></div>
+					<div class="bottom_content_right">
+	
+						<p>▍健康游戏忠告：抵制不良游戏，拒绝盗版游戏。注意自我保护，谨防受骗上当。适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活。</p>
+						<p>▍用户协议： 米哈游游戏使用许可及服务协议   米哈游用户个人信息及隐私保护政策   交易纠纷处理   家长监护工程   防沉迷系统
+						<p>▍适龄提示： 本游戏适合17岁（含）以上玩家娱乐</p>
+<span>沪ICP备14042301号-2 沪网文（2014）0592-182号 文网游备字〔2016〕Ｍ-CSG 1244 号</span>
+<span><a href=""><img src="img/ghs.png" alt="" /></a> 沪公网安备31010402001113号</span>
+<span>2015-2018 All Rights Reserved 上海米哈游网络科技股份有限公司版权所有 <a href=""><img src="img/youxidzbq.png" alt="" /></a><a href=""><img src="img/wenhuajingying.png" alt="" /></a></span>   
+<span>地址：上海市徐汇区宜山路1388号民润大厦12A   电话：86-021-52270738.</span>
+<span>投诉电话：021-34203135                      投诉邮箱：tousu@mihoyo.com <a href="">联系方式</a>     <a href="">加入我们 </a>    <a href="">免责条款</a>     <a href="">法律声明</a></span>						
+						
+					</div>
+				</div>
+				
+		</div>
+		</div>
+		<!--网站大舞台开始结束-->
+		
+	</body>
+</html>
